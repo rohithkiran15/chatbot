@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chat with the Bot</h1>
+
+    <!-- Form to send user input -->
+    <form action="/chat" method="POST">
+        <label for="message">Your Message:</label>
+        <input type="text" id="message" name="message" required>
+        <button type="submit">Send</button>
+    </form>
+
+    <div>
+        <h3>User Input:</h3>
+        <p>{{ user_input }}</p>
+
+        <h3>Bot Response:</h3>
+        <!-- Loop through the responses and display each one -->
+        <ul>
+            {% for response in chatbot_response %}
+                <li>{{ response }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
